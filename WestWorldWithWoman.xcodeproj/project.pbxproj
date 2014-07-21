@@ -10,6 +10,14 @@
 		38A236C5197C3A4100BB1910 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38A236C4197C3A4100BB1910 /* Foundation.framework */; };
 		38A236C8197C3A4100BB1910 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A236C7197C3A4100BB1910 /* main.m */; };
 		38A236CC197C3A4100BB1910 /* WestWorldWithWoman.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38A236CB197C3A4100BB1910 /* WestWorldWithWoman.1 */; };
+		38A236E0197C3AD000BB1910 /* LGFEntityBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A236D3197C3AD000BB1910 /* LGFEntityBase.m */; };
+		38A236E1197C3AD000BB1910 /* LGFEntityMiner.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A236D5197C3AD000BB1910 /* LGFEntityMiner.m */; };
+		38A236E2197C3AD000BB1910 /* LGFState.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A236D7197C3AD000BB1910 /* LGFState.m */; };
+		38A236E3197C3AD000BB1910 /* LGFStateMinerEnterMineAndDigNuggets.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A236D9197C3AD000BB1910 /* LGFStateMinerEnterMineAndDigNuggets.m */; };
+		38A236E4197C3AD000BB1910 /* LGFStateMinerGoHomeAndSleepUntilRested.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A236DB197C3AD000BB1910 /* LGFStateMinerGoHomeAndSleepUntilRested.m */; };
+		38A236E5197C3AD000BB1910 /* LGFStateMinerQuenchThirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A236DD197C3AD000BB1910 /* LGFStateMinerQuenchThirst.m */; };
+		38A236E6197C3AD000BB1910 /* LGFStateMinerVisitBankAndDepositGold.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A236DF197C3AD000BB1910 /* LGFStateMinerVisitBankAndDepositGold.m */; };
+		38A236E9197C3B5900BB1910 /* LGFStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A236E8197C3B5900BB1910 /* LGFStateMachine.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +39,22 @@
 		38A236C7197C3A4100BB1910 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		38A236CA197C3A4100BB1910 /* WestWorldWithWoman-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WestWorldWithWoman-Prefix.pch"; sourceTree = "<group>"; };
 		38A236CB197C3A4100BB1910 /* WestWorldWithWoman.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = WestWorldWithWoman.1; sourceTree = "<group>"; };
+		38A236D2197C3AD000BB1910 /* LGFEntityBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGFEntityBase.h; sourceTree = "<group>"; };
+		38A236D3197C3AD000BB1910 /* LGFEntityBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGFEntityBase.m; sourceTree = "<group>"; };
+		38A236D4197C3AD000BB1910 /* LGFEntityMiner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGFEntityMiner.h; sourceTree = "<group>"; };
+		38A236D5197C3AD000BB1910 /* LGFEntityMiner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGFEntityMiner.m; sourceTree = "<group>"; };
+		38A236D6197C3AD000BB1910 /* LGFState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGFState.h; sourceTree = "<group>"; };
+		38A236D7197C3AD000BB1910 /* LGFState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGFState.m; sourceTree = "<group>"; };
+		38A236D8197C3AD000BB1910 /* LGFStateMinerEnterMineAndDigNuggets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGFStateMinerEnterMineAndDigNuggets.h; sourceTree = "<group>"; };
+		38A236D9197C3AD000BB1910 /* LGFStateMinerEnterMineAndDigNuggets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGFStateMinerEnterMineAndDigNuggets.m; sourceTree = "<group>"; };
+		38A236DA197C3AD000BB1910 /* LGFStateMinerGoHomeAndSleepUntilRested.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGFStateMinerGoHomeAndSleepUntilRested.h; sourceTree = "<group>"; };
+		38A236DB197C3AD000BB1910 /* LGFStateMinerGoHomeAndSleepUntilRested.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGFStateMinerGoHomeAndSleepUntilRested.m; sourceTree = "<group>"; };
+		38A236DC197C3AD000BB1910 /* LGFStateMinerQuenchThirst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGFStateMinerQuenchThirst.h; sourceTree = "<group>"; };
+		38A236DD197C3AD000BB1910 /* LGFStateMinerQuenchThirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGFStateMinerQuenchThirst.m; sourceTree = "<group>"; };
+		38A236DE197C3AD000BB1910 /* LGFStateMinerVisitBankAndDepositGold.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGFStateMinerVisitBankAndDepositGold.h; sourceTree = "<group>"; };
+		38A236DF197C3AD000BB1910 /* LGFStateMinerVisitBankAndDepositGold.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGFStateMinerVisitBankAndDepositGold.m; sourceTree = "<group>"; };
+		38A236E7197C3B5900BB1910 /* LGFStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGFStateMachine.h; sourceTree = "<group>"; };
+		38A236E8197C3B5900BB1910 /* LGFStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGFStateMachine.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,9 +97,25 @@
 		38A236C6197C3A4100BB1910 /* WestWorldWithWoman */ = {
 			isa = PBXGroup;
 			children = (
+				38A236D2197C3AD000BB1910 /* LGFEntityBase.h */,
+				38A236D3197C3AD000BB1910 /* LGFEntityBase.m */,
+				38A236D4197C3AD000BB1910 /* LGFEntityMiner.h */,
+				38A236D5197C3AD000BB1910 /* LGFEntityMiner.m */,
+				38A236D6197C3AD000BB1910 /* LGFState.h */,
+				38A236D7197C3AD000BB1910 /* LGFState.m */,
+				38A236D8197C3AD000BB1910 /* LGFStateMinerEnterMineAndDigNuggets.h */,
+				38A236D9197C3AD000BB1910 /* LGFStateMinerEnterMineAndDigNuggets.m */,
+				38A236DA197C3AD000BB1910 /* LGFStateMinerGoHomeAndSleepUntilRested.h */,
+				38A236DB197C3AD000BB1910 /* LGFStateMinerGoHomeAndSleepUntilRested.m */,
+				38A236DC197C3AD000BB1910 /* LGFStateMinerQuenchThirst.h */,
+				38A236DD197C3AD000BB1910 /* LGFStateMinerQuenchThirst.m */,
+				38A236DE197C3AD000BB1910 /* LGFStateMinerVisitBankAndDepositGold.h */,
+				38A236DF197C3AD000BB1910 /* LGFStateMinerVisitBankAndDepositGold.m */,
 				38A236C7197C3A4100BB1910 /* main.m */,
 				38A236CB197C3A4100BB1910 /* WestWorldWithWoman.1 */,
 				38A236C9197C3A4100BB1910 /* Supporting Files */,
+				38A236E7197C3B5900BB1910 /* LGFStateMachine.h */,
+				38A236E8197C3B5900BB1910 /* LGFStateMachine.m */,
 			);
 			path = WestWorldWithWoman;
 			sourceTree = "<group>";
@@ -140,6 +180,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				38A236C8197C3A4100BB1910 /* main.m in Sources */,
+				38A236E5197C3AD000BB1910 /* LGFStateMinerQuenchThirst.m in Sources */,
+				38A236E6197C3AD000BB1910 /* LGFStateMinerVisitBankAndDepositGold.m in Sources */,
+				38A236E9197C3B5900BB1910 /* LGFStateMachine.m in Sources */,
+				38A236E1197C3AD000BB1910 /* LGFEntityMiner.m in Sources */,
+				38A236E4197C3AD000BB1910 /* LGFStateMinerGoHomeAndSleepUntilRested.m in Sources */,
+				38A236E0197C3AD000BB1910 /* LGFEntityBase.m in Sources */,
+				38A236E3197C3AD000BB1910 /* LGFStateMinerEnterMineAndDigNuggets.m in Sources */,
+				38A236E2197C3AD000BB1910 /* LGFState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

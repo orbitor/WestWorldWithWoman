@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LGFEntityMiner.h"
 
 int main(int argc, const char * argv[])
 {
@@ -16,6 +17,13 @@ int main(int argc, const char * argv[])
         // insert code here...
         NSLog(@"Hello, World!");
         
+        LGFEntityMiner* miner = [[LGFEntityMiner alloc] init];
+        int i;
+        
+        for (i = 0; i < 40; ++i)
+        {
+            [miner update];
+        }
     }
     return 0;
 }
