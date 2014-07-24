@@ -29,7 +29,7 @@ static LGFStateWifeDoHouseWork* _instance = nil;
 
 - (void) execute:(id)entity
 {
-    
+    NSLog(@"Wife: Cleaning up the house");
 }
 
 - (void) exit:(id)entity

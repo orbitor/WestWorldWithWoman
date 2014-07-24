@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "LGFEntityMiner.h"
+#import "LGFEntityMinersWife.h"
 
 int main(int argc, const char * argv[])
 {
@@ -18,11 +19,14 @@ int main(int argc, const char * argv[])
         NSLog(@"Hello, World!");
         
         LGFEntityMiner* miner = [[LGFEntityMiner alloc] init];
+        LGFEntityMinersWife* wife = [[LGFEntityMinersWife alloc] init];
+        
         int i;
         
         for (i = 0; i < 50; ++i)
         {
             [miner update];
+            [wife update];
         }
     }
     return 0;

@@ -7,8 +7,12 @@
 //
 
 #import "LGFStateWifeGlobal.h"
+#import "LGFStateWifeTendHousePlants.h"
+#import "LGFStateMachine.h"
+#import "LGFEntityMinersWife.h"
 
 static LGFStateWifeGlobal* _instance = nil;
+static int _tend_flowers_counter = 0;
 
 @implementation LGFStateWifeGlobal
 
@@ -29,7 +33,11 @@ static LGFStateWifeGlobal* _instance = nil;
 
 - (void) execute:(id)entity
 {
-    
+    if (++_tend_flowers_counter > 7)
+    {
+        _tend_flowers_counter = 0;
+        [[entity stateMachine] changeState:[LGFStateWifeTendHousePlants stateWifeTendHousePlants]];
+    }
 }
 
 - (void) exit:(id)entity

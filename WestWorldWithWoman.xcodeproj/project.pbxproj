@@ -21,6 +21,7 @@
 		38DF5C9B19811ADC00C96E55 /* LGFEntityMinersWife.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DF5C9A19811ADC00C96E55 /* LGFEntityMinersWife.m */; };
 		38DF5C9E198120D300C96E55 /* LGFStateWifeGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DF5C9D198120D300C96E55 /* LGFStateWifeGlobal.m */; };
 		38DF5CA11981226C00C96E55 /* LGFStateWifeDoHouseWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DF5CA01981226C00C96E55 /* LGFStateWifeDoHouseWork.m */; };
+		38DF5CA41981B82400C96E55 /* LGFStateWifeTendHousePlants.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DF5CA31981B82400C96E55 /* LGFStateWifeTendHousePlants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -64,6 +65,8 @@
 		38DF5C9D198120D300C96E55 /* LGFStateWifeGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGFStateWifeGlobal.m; sourceTree = "<group>"; };
 		38DF5C9F1981226C00C96E55 /* LGFStateWifeDoHouseWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGFStateWifeDoHouseWork.h; sourceTree = "<group>"; };
 		38DF5CA01981226C00C96E55 /* LGFStateWifeDoHouseWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGFStateWifeDoHouseWork.m; sourceTree = "<group>"; };
+		38DF5CA21981B82400C96E55 /* LGFStateWifeTendHousePlants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGFStateWifeTendHousePlants.h; sourceTree = "<group>"; };
+		38DF5CA31981B82400C96E55 /* LGFStateWifeTendHousePlants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGFStateWifeTendHousePlants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +113,12 @@
 				38A236D3197C3AD000BB1910 /* LGFEntityBase.m */,
 				38A236D4197C3AD000BB1910 /* LGFEntityMiner.h */,
 				38A236D5197C3AD000BB1910 /* LGFEntityMiner.m */,
+				38DF5C9919811ADC00C96E55 /* LGFEntityMinersWife.h */,
+				38DF5C9A19811ADC00C96E55 /* LGFEntityMinersWife.m */,
 				38A236D6197C3AD000BB1910 /* LGFState.h */,
 				38A236D7197C3AD000BB1910 /* LGFState.m */,
+				38A236E7197C3B5900BB1910 /* LGFStateMachine.h */,
+				38A236E8197C3B5900BB1910 /* LGFStateMachine.m */,
 				38A236D8197C3AD000BB1910 /* LGFStateMinerEnterMineAndDigNuggets.h */,
 				38A236D9197C3AD000BB1910 /* LGFStateMinerEnterMineAndDigNuggets.m */,
 				38A236DA197C3AD000BB1910 /* LGFStateMinerGoHomeAndSleepUntilRested.h */,
@@ -120,17 +127,15 @@
 				38A236DD197C3AD000BB1910 /* LGFStateMinerQuenchThirst.m */,
 				38A236DE197C3AD000BB1910 /* LGFStateMinerVisitBankAndDepositGold.h */,
 				38A236DF197C3AD000BB1910 /* LGFStateMinerVisitBankAndDepositGold.m */,
-				38A236C7197C3A4100BB1910 /* main.m */,
-				38A236CB197C3A4100BB1910 /* WestWorldWithWoman.1 */,
-				38A236C9197C3A4100BB1910 /* Supporting Files */,
-				38A236E7197C3B5900BB1910 /* LGFStateMachine.h */,
-				38A236E8197C3B5900BB1910 /* LGFStateMachine.m */,
-				38DF5C9919811ADC00C96E55 /* LGFEntityMinersWife.h */,
-				38DF5C9A19811ADC00C96E55 /* LGFEntityMinersWife.m */,
-				38DF5C9C198120D300C96E55 /* LGFStateWifeGlobal.h */,
-				38DF5C9D198120D300C96E55 /* LGFStateWifeGlobal.m */,
 				38DF5C9F1981226C00C96E55 /* LGFStateWifeDoHouseWork.h */,
 				38DF5CA01981226C00C96E55 /* LGFStateWifeDoHouseWork.m */,
+				38DF5C9C198120D300C96E55 /* LGFStateWifeGlobal.h */,
+				38DF5C9D198120D300C96E55 /* LGFStateWifeGlobal.m */,
+				38DF5CA21981B82400C96E55 /* LGFStateWifeTendHousePlants.h */,
+				38DF5CA31981B82400C96E55 /* LGFStateWifeTendHousePlants.m */,
+				38A236C7197C3A4100BB1910 /* main.m */,
+				38A236C9197C3A4100BB1910 /* Supporting Files */,
+				38A236CB197C3A4100BB1910 /* WestWorldWithWoman.1 */,
 			);
 			path = WestWorldWithWoman;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 			files = (
 				38A236C8197C3A4100BB1910 /* main.m in Sources */,
 				38A236E5197C3AD000BB1910 /* LGFStateMinerQuenchThirst.m in Sources */,
+				38DF5CA41981B82400C96E55 /* LGFStateWifeTendHousePlants.m in Sources */,
 				38DF5C9E198120D300C96E55 /* LGFStateWifeGlobal.m in Sources */,
 				38A236E6197C3AD000BB1910 /* LGFStateMinerVisitBankAndDepositGold.m in Sources */,
 				38DF5C9B19811ADC00C96E55 /* LGFEntityMinersWife.m in Sources */,
