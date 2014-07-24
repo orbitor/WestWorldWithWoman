@@ -10,6 +10,7 @@
 #import "LGFEntityMiner.h"
 #import "LGFStateMinerGoHomeAndSleepUntilRested.h"
 #import "LGFStateMinerEnterMineAndDigNuggets.h"
+#import "LGFStateMachine.h"
 
 static LGFStateMinerVisitBankAndDepositGold* _instance = nil;
 
@@ -30,7 +31,7 @@ static LGFStateMinerVisitBankAndDepositGold* _instance = nil;
     if (LGF_LT_BANK != [miner currentLocation])
     {
         NSLog(@"Miner: Going to the bank");
-        [miner setCurrentLocation:LGF_LT_BANK];
+        [miner changeLocation:LGF_LT_BANK];
     }
 }
 
@@ -45,11 +46,11 @@ static LGFStateMinerVisitBankAndDepositGold* _instance = nil;
     if (YES == [miner hasReachedComfortLevel])
     {
         NSLog(@"Miner: Rich enough for now. Back home to my lady");
-        [miner changeState:[LGFStateMinerGoHomeAndSleepUntilRested stateMinerGoHomeAndSleepUntilRested]];
+        [[miner stateMachine] changeState:[LGFStateMinerGoHomeAndSleepUntilRested stateMinerGoHomeAndSleepUntilRested]];
     }
     else
     {
-        [miner changeState:[LGFStateMinerEnterMineAndDigNuggets stateMinerEnterMineAndDigNuggets]];
+        [[miner stateMachine] changeState:[LGFStateMinerEnterMineAndDigNuggets stateMinerEnterMineAndDigNuggets]];
     }
 }
 

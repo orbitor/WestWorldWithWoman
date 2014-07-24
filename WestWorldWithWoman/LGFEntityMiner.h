@@ -8,30 +8,29 @@
 
 #import "LGFEntityBase.h"
 
-@class LGFState;
+@class LGFStateMachine;
 
 @interface LGFEntityMiner : LGFEntityBase
 {
     @private
-        LGFState*       currentState;
-        LGFLocationType currentLocation;
-        int             carriedGold;
-        int             moneyInBank;
-        int             thirstLevel;
-        int             fatigueLevel;
+        LGFStateMachine*    stateMachine;
+        LGFLocationType     currentLocation;
+        int                 carriedGold;
+        int                 moneyInBank;
+        int                 thirstLevel;
+        int                 fatigueLevel;
 }
 
-@property(nonatomic, readonly) LGFState* currentState;
-@property(nonatomic) LGFLocationType currentLocation;
+@property(nonatomic, readonly) LGFStateMachine* stateMachine;
+@property(nonatomic, readonly) LGFLocationType currentLocation;
 @property(nonatomic) int carriedGold;
 @property(nonatomic) int moneyInBank;
 @property(nonatomic) int thirstLevel;
 @property(nonatomic) int fatigueLevel;
 
-/* instance members */
-- (void) changeState: (LGFState*) new_state;
-- (void) addToCarriedGold: (int) add_gold;
-- (void) addToMoneyInBank: (int) add_money;
+- (void) changeLocation:(LGFLocationType) newLocation;
+- (void) addToCarriedGold: (int) addGold;
+- (void) addToMoneyInBank: (int) addMoney;
 - (void) buyAndDrinkWhiskey;
 - (void) increaseFatigue;
 - (void) decreaseFatigue;

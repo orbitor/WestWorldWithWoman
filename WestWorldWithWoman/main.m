@@ -20,7 +20,7 @@ int main(int argc, const char * argv[])
         LGFEntityMiner* miner = [[LGFEntityMiner alloc] init];
         int i;
         
-        for (i = 0; i < 40; ++i)
+        for (i = 0; i < 50; ++i)
         {
             [miner update];
         }

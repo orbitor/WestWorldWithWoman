@@ -9,6 +9,11 @@
 #import "LGFState.h"
 
 @interface LGFStateMinerQuenchThirst : LGFState
+{
+    int pantsLostCount;
+}
+
+@property int pantsLostCount;
 
 + (LGFStateMinerQuenchThirst*) stateMinerQuenchThirst;
 

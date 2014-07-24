@@ -18,6 +18,9 @@
 		38A236E5197C3AD000BB1910 /* LGFStateMinerQuenchThirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A236DD197C3AD000BB1910 /* LGFStateMinerQuenchThirst.m */; };
 		38A236E6197C3AD000BB1910 /* LGFStateMinerVisitBankAndDepositGold.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A236DF197C3AD000BB1910 /* LGFStateMinerVisitBankAndDepositGold.m */; };
 		38A236E9197C3B5900BB1910 /* LGFStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A236E8197C3B5900BB1910 /* LGFStateMachine.m */; };
+		38DF5C9B19811ADC00C96E55 /* LGFEntityMinersWife.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DF5C9A19811ADC00C96E55 /* LGFEntityMinersWife.m */; };
+		38DF5C9E198120D300C96E55 /* LGFStateWifeGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DF5C9D198120D300C96E55 /* LGFStateWifeGlobal.m */; };
+		38DF5CA11981226C00C96E55 /* LGFStateWifeDoHouseWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DF5CA01981226C00C96E55 /* LGFStateWifeDoHouseWork.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,6 +58,12 @@
 		38A236DF197C3AD000BB1910 /* LGFStateMinerVisitBankAndDepositGold.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGFStateMinerVisitBankAndDepositGold.m; sourceTree = "<group>"; };
 		38A236E7197C3B5900BB1910 /* LGFStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGFStateMachine.h; sourceTree = "<group>"; };
 		38A236E8197C3B5900BB1910 /* LGFStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGFStateMachine.m; sourceTree = "<group>"; };
+		38DF5C9919811ADC00C96E55 /* LGFEntityMinersWife.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGFEntityMinersWife.h; sourceTree = "<group>"; };
+		38DF5C9A19811ADC00C96E55 /* LGFEntityMinersWife.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGFEntityMinersWife.m; sourceTree = "<group>"; };
+		38DF5C9C198120D300C96E55 /* LGFStateWifeGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGFStateWifeGlobal.h; sourceTree = "<group>"; };
+		38DF5C9D198120D300C96E55 /* LGFStateWifeGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGFStateWifeGlobal.m; sourceTree = "<group>"; };
+		38DF5C9F1981226C00C96E55 /* LGFStateWifeDoHouseWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGFStateWifeDoHouseWork.h; sourceTree = "<group>"; };
+		38DF5CA01981226C00C96E55 /* LGFStateWifeDoHouseWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGFStateWifeDoHouseWork.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +125,12 @@
 				38A236C9197C3A4100BB1910 /* Supporting Files */,
 				38A236E7197C3B5900BB1910 /* LGFStateMachine.h */,
 				38A236E8197C3B5900BB1910 /* LGFStateMachine.m */,
+				38DF5C9919811ADC00C96E55 /* LGFEntityMinersWife.h */,
+				38DF5C9A19811ADC00C96E55 /* LGFEntityMinersWife.m */,
+				38DF5C9C198120D300C96E55 /* LGFStateWifeGlobal.h */,
+				38DF5C9D198120D300C96E55 /* LGFStateWifeGlobal.m */,
+				38DF5C9F1981226C00C96E55 /* LGFStateWifeDoHouseWork.h */,
+				38DF5CA01981226C00C96E55 /* LGFStateWifeDoHouseWork.m */,
 			);
 			path = WestWorldWithWoman;
 			sourceTree = "<group>";
@@ -181,9 +196,12 @@
 			files = (
 				38A236C8197C3A4100BB1910 /* main.m in Sources */,
 				38A236E5197C3AD000BB1910 /* LGFStateMinerQuenchThirst.m in Sources */,
+				38DF5C9E198120D300C96E55 /* LGFStateWifeGlobal.m in Sources */,
 				38A236E6197C3AD000BB1910 /* LGFStateMinerVisitBankAndDepositGold.m in Sources */,
+				38DF5C9B19811ADC00C96E55 /* LGFEntityMinersWife.m in Sources */,
 				38A236E9197C3B5900BB1910 /* LGFStateMachine.m in Sources */,
 				38A236E1197C3AD000BB1910 /* LGFEntityMiner.m in Sources */,
+				38DF5CA11981226C00C96E55 /* LGFStateWifeDoHouseWork.m in Sources */,
 				38A236E4197C3AD000BB1910 /* LGFStateMinerGoHomeAndSleepUntilRested.m in Sources */,
 				38A236E0197C3AD000BB1910 /* LGFEntityBase.m in Sources */,
 				38A236E3197C3AD000BB1910 /* LGFStateMinerEnterMineAndDigNuggets.m in Sources */,
@@ -301,6 +319,7 @@
 				38A236D1197C3A4100BB1910 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

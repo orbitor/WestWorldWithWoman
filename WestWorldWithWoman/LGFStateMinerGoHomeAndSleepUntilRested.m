@@ -9,6 +9,7 @@
 #import "LGFStateMinerGoHomeAndSleepUntilRested.h"
 #import "LGFEntityMiner.h"
 #import "LGFStateMinerEnterMineAndDigNuggets.h"
+#import "LGFStateMachine.h"
 
 static LGFStateMinerGoHomeAndSleepUntilRested* _instance = nil;
 
@@ -29,7 +30,7 @@ static LGFStateMinerGoHomeAndSleepUntilRested* _instance = nil;
     if (LGF_LT_SHACK != [miner currentLocation])
     {
         NSLog(@"Miner: Walking home");
-        [miner setCurrentLocation:LGF_LT_SHACK];
+        [miner changeLocation:LGF_LT_SHACK];
     }
 }
 
@@ -38,7 +39,7 @@ static LGFStateMinerGoHomeAndSleepUntilRested* _instance = nil;
     if (NO == [miner isFatigued])
     {
         NSLog(@"Miner: Great nap. Time to find more gold");
-        [miner changeState:[LGFStateMinerEnterMineAndDigNuggets stateMinerEnterMineAndDigNuggets]];
+        [[miner stateMachine] changeState:[LGFStateMinerEnterMineAndDigNuggets stateMinerEnterMineAndDigNuggets]];
     }
     else
     {

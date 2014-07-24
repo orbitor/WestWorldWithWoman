@@ -17,14 +17,20 @@
 @synthesize previousState;
 @synthesize globalState;
 
-+ (LGFStateMachine*) stateMachineWithOwner:(LGFEntityBase *)owner
++ (LGFStateMachine*) stateMachineWithOwner:(id)owner
 {
     LGFStateMachine* sm = [[LGFStateMachine alloc] init];
     [sm setOwnerEntity:owner];
     return sm;
 }
 
-- (void) changeState:(LGFState*)newState
+- (void) update
+{
+    [[self globalState] execute:[self ownerEntity]];
+    [[self currentState] execute:[self ownerEntity]];
+}
+
+- (void) changeState:(id)newState
 {
     [self setPreviousState:[self currentState]];
     [[self currentState] exit:[self ownerEntity]];
@@ -34,13 +40,13 @@
 
 - (void) revertToPreviousState
 {
-    
+    [self changeState:[self previousState]];
 }
 
 /*TODO: how does NSObject:isKindOfClass work? And could it be useful
  * here?
  */
-- (bool) isInState:(LGFState*)compareState
+- (bool) isInState:(id)compareState
 {
     return NO;
 }

@@ -7,7 +7,7 @@
 //
 
 #import "LGFEntityMiner.h"
-#import "LGFState.h"
+#import "LGFStateMachine.h"
 #import "LGFStateMinerGoHomeAndSleepUntilRested.h"
 
 static const int GoldComfortThreshold = 5;
@@ -17,7 +17,7 @@ static const int TirednessThreshold = 5;
 
 @implementation LGFEntityMiner
 
-@synthesize currentState;
+@synthesize stateMachine;
 @synthesize currentLocation;
 @synthesize carriedGold;
 @synthesize moneyInBank;
@@ -28,17 +28,10 @@ static const int TirednessThreshold = 5;
 {
     self = [self initWithEntityId:10];
     
-    [self setCurrentLocation:LGF_LT_SHACK];
+    currentLocation = LGF_LT_SHACK;
     
-    /*TODO: is this necessary? Does ObjC say anything about how
-     * a structure is zero'd?
-     */
-    [self setCarriedGold:0];
-    [self setMoneyInBank:0];
-    [self setThirstLevel:0];
-    [self setFatigueLevel:0];
-    
-    currentState = [LGFStateMinerGoHomeAndSleepUntilRested stateMinerGoHomeAndSleepUntilRested];
+    stateMachine = [LGFStateMachine stateMachineWithOwner:self];
+    [stateMachine setCurrentState:[LGFStateMinerGoHomeAndSleepUntilRested stateMinerGoHomeAndSleepUntilRested]];
     
     return self;
 }
@@ -48,15 +41,13 @@ static const int TirednessThreshold = 5;
 {
     [self setThirstLevel:[self thirstLevel] + 1];
 
-    [[self currentState] execute:self];
+    [[self stateMachine] update];
 }
 
 /* instance members */
-- (void) changeState:(LGFState*) new_state;
+- (void) changeLocation:(LGFLocationType)newLocation
 {
-    [[self currentState] exit: self];
-    currentState = new_state;
-    [[self currentState] enter: self];
+    currentLocation = newLocation;
 }
 
 - (void) addToCarriedGold:(int) add_gold;

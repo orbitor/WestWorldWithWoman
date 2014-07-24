@@ -8,26 +8,24 @@
 
 #import <Foundation/Foundation.h>
 
-@class LGFEntityBase;
-@class LGFState;
-
 @interface LGFStateMachine : NSObject
 {
-    LGFEntityBase* ownerEntity;
-    LGFState* currentState;
-    LGFState* previousState;
-    LGFState* globalState;
+    id ownerEntity;
+    id currentState;
+    id previousState;
+    id globalState;
 }
 
-@property LGFEntityBase* ownerEntity;
-@property LGFState* currentState;
-@property LGFState* previousState;
-@property LGFState* globalState;
+@property id ownerEntity;
+@property id currentState;
+@property id previousState;
+@property id globalState;
 
-+ (LGFStateMachine*) stateMachineWithOwner:(LGFEntityBase*) owner;
++ (LGFStateMachine*) stateMachineWithOwner:(id) owner;
 
-- (void) changeState:(LGFState*)newState;
+- (void) update;
+- (void) changeState:(id)newState;
 - (void) revertToPreviousState;
-- (bool) isInState:(LGFState*)compareState;
+- (bool) isInState:(id)compareState;
 
 @end

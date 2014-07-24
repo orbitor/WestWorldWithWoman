@@ -9,16 +9,19 @@
 #import "LGFStateMinerQuenchThirst.h"
 #import "LGFEntityMiner.h"
 #import "LGFStateMinerEnterMineAndDigNuggets.h"
+#import "LGFStateMachine.h"
 
 static LGFStateMinerQuenchThirst* _instance = nil;
 
 @implementation LGFStateMinerQuenchThirst
+@synthesize pantsLostCount;
 
 + (LGFStateMinerQuenchThirst*) stateMinerQuenchThirst
 {
     if (nil == _instance)
     {
         _instance = [[LGFStateMinerQuenchThirst alloc] init];
+        [_instance setPantsLostCount:0];
     }
     
     return _instance;
@@ -28,7 +31,7 @@ static LGFStateMinerQuenchThirst* _instance = nil;
 {
     if (LGF_LT_SALOON != [miner currentLocation])
     {
-        [miner setCurrentLocation:LGF_LT_SALOON];
+        [miner changeLocation:LGF_LT_SALOON];
         NSLog(@"Miner: Thirsty! Walking to the saloon");
     }
 }
@@ -38,8 +41,9 @@ static LGFStateMinerQuenchThirst* _instance = nil;
     if (YES == [miner isThirsty])
     {
         [miner buyAndDrinkWhiskey];
-        NSLog(@"Miner: I wish I didn't like whiskey as much as I do");
-        [miner changeState:[LGFStateMinerEnterMineAndDigNuggets stateMinerEnterMineAndDigNuggets]];
+        NSLog(@"Miner: I wish I didn't like whiskey as much as I do. But, I sure do!");
+
+        [[miner stateMachine] changeState:[LGFStateMinerEnterMineAndDigNuggets stateMinerEnterMineAndDigNuggets]];
     }
     else
     {
@@ -49,7 +53,16 @@ static LGFStateMinerQuenchThirst* _instance = nil;
 
 - (void) exit:(LGFEntityMiner *)miner
 {
-    NSLog(@"Miner: Leaving the saloon. Where did my pants make off to?");
+    if (3 < [self pantsLostCount])
+    {
+        NSLog(@"Miner: Seriously...has anyone seen my pants?");
+        [self setPantsLostCount:0];
+    }
+    else
+    {
+        NSLog(@"Miner: Leaving the saloon. Where did my pants make off to?");
+        [self setPantsLostCount:[self pantsLostCount] + 1];
+    }
 }
 
 @end

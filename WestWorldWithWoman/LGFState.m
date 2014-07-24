@@ -7,20 +7,19 @@
 //
 
 #import "LGFState.h"
-#import "LGFEntityBase.h"
 
 @implementation LGFState
 
 /* all virtual methods */
-- (void) enter:(LGFEntityBase*) entity
+- (void) enter:(id) entity
 {
 }
 
-- (void) execute:(LGFEntityBase*) entity
+- (void) execute:(id) entity
 {
 }
 
-- (void) exit:(LGFEntityBase*) entity
+- (void) exit:(id) entity
 {
 }
 

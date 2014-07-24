@@ -10,6 +10,7 @@
 #import "LGFEntityMiner.h"
 #import "LGFStateMinerVisitBankAndDepositGold.h"
 #import "LGFStateMinerQuenchThirst.h"
+#import "LGFStateMachine.h"
 
 static LGFStateMinerEnterMineAndDigNuggets* _instance = nil;
 
@@ -25,42 +26,34 @@ static LGFStateMinerEnterMineAndDigNuggets* _instance = nil;
     return _instance;
 }
 
-- (void) enter:(LGFEntityBase*) entity
+- (void) enter:(id) entity
 {
-    /*TODO: I am sure that this is the wrong way to do this. Need
-     * to put some thought into the object graph and how it differs
-     * from the C++ version of this code.
-     */
-    LGFEntityMiner* miner = (LGFEntityMiner*) entity;
-    
-    if (LGF_LT_GOLDMINE != [miner currentLocation])
+    if (LGF_LT_GOLDMINE != [entity currentLocation])
     {
         NSLog(@"Miner: Walking to the mine");
-        [miner setCurrentLocation: LGF_LT_GOLDMINE];
+        [entity changeLocation:LGF_LT_GOLDMINE];
     }
 }
 
-- (void) execute:(LGFEntityBase*) entity
-{
-    LGFEntityMiner* miner = (LGFEntityMiner*) entity;
-    
-    [miner addToCarriedGold:1];
-    [miner increaseFatigue];
+- (void) execute:(id) entity
+{   
+    [entity addToCarriedGold:1];
+    [entity increaseFatigue];
     
     NSLog(@"Miner: Picking up a nugget");
     
-    if (YES == [miner arePocketsFull])
+    if (YES == [entity arePocketsFull])
     {
-        [miner changeState:[LGFStateMinerVisitBankAndDepositGold stateMinerVisitBankAndDepositGold]];
+        [[entity stateMachine] changeState:[LGFStateMinerVisitBankAndDepositGold stateMinerVisitBankAndDepositGold]];
     }
     
-    if (YES == [miner isThirsty])
+    if (YES == [entity isThirsty])
     {
-        [miner changeState:[LGFStateMinerQuenchThirst stateMinerQuenchThirst]];
+        [[entity stateMachine] changeState:[LGFStateMinerQuenchThirst stateMinerQuenchThirst]];
     }
 }
 
-- (void) exit:(LGFEntityBase*) entity
+- (void) exit:(id) entity
 {
     NSLog(@"Miner: Leaving the gold mine with my pockets full of gold");
 }
