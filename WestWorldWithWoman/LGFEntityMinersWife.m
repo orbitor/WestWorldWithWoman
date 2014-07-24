@@ -18,7 +18,7 @@
 
 - (id) init
 {
-    self = [self initWithEntityId:10];
+    self = [self initWithEntityId:11];
     
     currentLocation = LGF_LT_SHACK;
     
